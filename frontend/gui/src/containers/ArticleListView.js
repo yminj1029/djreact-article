@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Articles from "../components/Articles";
-
+import CustomForm from "../components/Form";
 const ArticleListView = () => {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
@@ -10,7 +10,14 @@ const ArticleListView = () => {
       console.log(res.data);
     });
   }, []);
-  return <Articles data={articles}></Articles>;
+  return (
+    <>
+      <Articles data={articles}></Articles>
+      <br></br>
+      <h2>Create an article</h2>
+      <CustomForm></CustomForm>
+    </>
+  );
 };
 
 export default ArticleListView;

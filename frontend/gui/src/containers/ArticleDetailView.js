@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Card } from "antd";
+import CustomForm from "../components/Form";
 
 const ArticleDetailView = ({ match }) => {
   const [article, setArticle] = useState([]);
@@ -12,9 +13,12 @@ const ArticleDetailView = ({ match }) => {
     });
   }, [match]);
   return (
-    <Card title={article.title}>
-      <p>{article.content}</p>
-    </Card>
+    <>
+      <Card title={article.title}>
+        <p>{article.content}</p>
+      </Card>
+      <CustomForm></CustomForm>
+    </>
   );
 };
 
