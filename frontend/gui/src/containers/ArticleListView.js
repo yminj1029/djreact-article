@@ -15,7 +15,11 @@ const ArticleListView = () => {
       <Articles data={articles}></Articles>
       <br></br>
       <h2>Create an article</h2>
-      <CustomForm></CustomForm>
+      <CustomForm
+        requestType="post"
+        articleID={null}
+        btnText="Create"
+      ></CustomForm>
     </>
   );
 };
